@@ -44,7 +44,7 @@ function Data2() {
       <div className="container">
         {items.map((x) => {
           return (
-            <div className="data">
+            <div className="data" style={{paddingLeft:"10px"}}>
               <p><span style={{fontWeight:"bold"}}>ID:{x.id}</span></p>
               <p><span style={{color:"blue"}}>Title: </span>{x.title}</p>
               <img src={x.thumbnailUrl} alt="" />
