@@ -1,6 +1,6 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
-
+import '../css/data2.css'
 function Data2() {
   const [items, setItems] = useState([]);
   const [hasMore, sethasMore] = useState(true);
@@ -30,12 +30,13 @@ function Data2() {
 
     setItems([...items, ...commentsFormServer]);
     if (commentsFormServer.length === 0 || commentsFormServer.length < 100) {
-        sethasMore(false);
+      sethasMore(false);
     }
-      setpage(page + 1);
-    
+    setpage(page + 1);
+
   };
   return (
+    <div className="data2">
     <InfiniteScroll
       dataLength={items.length}
       next={fetchData}
@@ -44,16 +45,20 @@ function Data2() {
       <div className="container">
         {items.map((x) => {
           return (
-            <div className="data" style={{paddingLeft:"10px"}}>
-              <p><span style={{fontWeight:"bold"}}>ID:{x.id}</span></p>
-              <p><span style={{color:"blue"}}>Title: </span>{x.title}</p>
-              <img src={x.thumbnailUrl} alt="" />
+            <div class="card bg-dark" style={{ width: "15rem",border:"none",borderRadius:"0rem"}}>
+              <div className="id" style={{ border: "0.1rem solid black", textAlign: "center", backgroundColor: "black", color: "white" }}>
+                <h5 class="card-title"><span>Card ID:</span>{x.id}</h5>
+              </div>
+              <img src={x.thumbnailUrl} class="card-img-top" alt="..." />
+              <h5 class="card-title text-light"><span class="text-danger">Title:</span>{x.title}</h5>
             </div>
           );
         })}
       </div>
 
     </InfiniteScroll>
+    </div>
+
   );
 }
 

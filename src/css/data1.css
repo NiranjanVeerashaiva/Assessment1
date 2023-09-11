@@ -1,8 +1,16 @@
-.display{
-    border: 1px solid black;
-    padding-left: 10px;
+.card-body{
+    background-color: #50298f;
+    border-radius: 0.5rem;
 }
-
-.data1{
-    padding: 4px 0px;
+.card{
+    margin: 1rem 0.5rem;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 3rem;
+}
+.data1 .card-body:hover{
+    transform: scale(1.2);
+    z-index:2;
 }
